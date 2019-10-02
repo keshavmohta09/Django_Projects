@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form class="user"  action="save_sale_orders" method="post">
+
+{% csrf_token %}
+                <h3 class="h3 mb-2 text-gray-800">Sales Order Details</h3>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="sub" name="sub" placeholder="Subject">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="oppo" name="oppo" placeholder="Oppurtunity Name">
+                  </div>
+                </div>
+             <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="q_name" name="q_name" placeholder="Quote Name">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="p_order" name="p_order" placeholder="Purchase Order">
+                  </div>
+                </div>
+             <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="contact" name="contact" placeholder="Contact Name">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="org" name="org" placeholder="Organization Name">
+                  </div>
+                </div>
+            <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="assigned_to" name="assigned_to" placeholder="Assigned To">
+                  </div>
+                 <div class="col-sm-6 mb-3 mb-sm-0" >
+                      <input type="text" class="form-control form-control-user" name="status" placeholder="Status">
+                    <select name="status" id="status">
+                        <option value="New">New</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Fully Delivered">Fully Delivered</option>
+                    </select>
+                  </div>
+             </div>
+            <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="number" class="form-control form-control-user" id="sduty" name="s_duty" placeholder = 'Sales Duty(%)'>
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="number" class="form-control form-control-user" id="eduty" name="e_duty" placeholder="Excise Duty(%)">
+                  </div>
+                </div>
+             <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="carrier" name="carrier" placeholder = 'Carrier'>
+                 <select name="carrier">
+                        <option value="FedEx">FedEx</option>
+                        <option value="UPS">UPS</option>
+                        <option value="Blue Dart">Blue Dart</option>
+                        <option value="DHL">DHL</option>
+                    </select>
+                  </div>
+
+             <h3 class="h3 mb-2 text-gray-800">Address Details</h3>
+
+             <div class="form-group row">
+
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" name="cbaf" placeholder="Copy Billing Address From">
+                    <select name="cbaf" id="cbaf">
+                    <option value="Organization">Organization</option>
+                      <option value="Related To">Related To</option>
+                    <option value="Shipping Address">Shipping Address</option>
+                    </select>
+                  </div>
+                 <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" name="csaf" placeholder="Copy Shipping Address From">
+                    <select name="csaf" id="csaf">
+                    <option value="Organization">Organization</option>
+                      <option value="Related To">Related To</option>
+                    <option value="Shipping Address">Shipping Address</option>
+                    </select>
+                  </div>
+             </div>
+             <div class="form-group row">
+                 <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" name="bill_c" placeholder="Billing Country">
+                    <select name="bill_c" id="bill_c">
+                    <option value="INDIA">INDIA</option>
+                      <option value="UNITED STATES">UNITED STATES</option>
+                    <option value="RUSSIA">RUSSIA</option>
+                  <option value="CHINA">CHINA</option>
+                      <option value="AUSTRALIA">AUSTRALIA</option>
+                    <option value="FRANCE">FRANCE</option>
+                    </select>
+                  </div>
+                 <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" name="shipp_c" placeholder="Shipping Country">
+                    <select name="shipp_c" id="shipp_c">
+                    <option value="INDIA">INDIA</option>
+                      <option value="UNITED STATES">UNITED STATES</option>
+                    <option value="RUSSIA">RUSSIA</option>
+                  <option value="CHINA">CHINA</option>
+                      <option value="AUSTRALIA">AUSTRALIA</option>
+                    <option value="FRANCE">FRANCE</option>
+                    </select>
+                  </div>
+             </div>
+          <div class="form-group row">
+             <div class="col-sm-6">
+              <textarea rows="5" cols="50" name="b_a"
+                            id="ba" placeholder="Billing Address"></textarea>
+             </div>
+              <div class="col-sm-6">
+              <textarea rows="5" cols="50" name="s_a"
+                            id="sa" placeholder="Shipping Address"></textarea>
+             </div>
+          </div>
+          <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="number" class="form-control form-control-user" id="bpc" name="bpc" placeholder="Billing Postal Code">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="number" class="form-control form-control-user" id="spc" name="spc" placeholder="Shipping Postal Code">
+                  </div>
+                </div>
+             <h3 class="h3 mb-2 text-gray-800">Terms & Conditions </h3>
+             <h5 class="h3 mb-2 text-gray-800"></h5>
+             <div class="col-sm-6 mb-3 mb-sm-0">- Unless otherwise agreed in writing by the supplier all invoices are payable within thirty (30) days of the date of invoice, in the currency of the invoice, drawn on a bank based in India or by such other method as is agreed in advance by the Supplier.<br>
+
+ - All prices are not inclusive of VAT which shall be payable in addition by the Customer at the applicable rate.
+             </div>
+             <br>
+            <h3 class="h3 mb-2 text-gray-800">Description Details</h3>
+            <div class="col-sm-6">
+              <textarea rows="5" cols="50" name="desc"
+                            id="description"></textarea>
+            </div>
+
+             <br><br>
+
+
+              <center><input type="submit" value="Save">
+                  <input type="reset" value="Cancel"></center>
+
+
+         </form>
+{% endblock %}
+

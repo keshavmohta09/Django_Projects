@@ -1,0 +1,21 @@
+{% load socialaccount %}
+{% providers_media_js %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google registration</title>
+</head>
+<body>
+    <form action="index_google" method="post">
+    {% csrf_token %}
+
+                <li><a href =" {% provider_login_url "google"  %}" >Google connect</a>
+        </li><br>
+
+
+
+
+</form>
+</body>
+</html>

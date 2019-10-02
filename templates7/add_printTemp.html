@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+          <!-- Page Heading -->
+
+         <form class="user"  action="" method="post">
+        {% csrf_token %}
+                <h3 class="h3 mb-2 text-gray-800">Basic Information</h3>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0"><h5>Template Name</h5>
+                    {{form.t}}
+                     </div>
+                  <div class="col-sm-6"><h5>Module</h5>
+                    {{form.m}}
+                  </div>
+                </div>
+              <div class="col-sm-6"><h5>Description</h5>
+                {{form.desc}}
+              </div>
+				 <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0"><h5>Default Template</h5>
+                    {{form.d_t}}
+                      </div>
+                     <div class="col-sm-6"><h5>Assigned To</h5>
+                       {{form.a}}
+                      </div>
+                </div><br>
+              <center><input type="submit" value="Save">
+                  <input type="reset" value="Cancel"></center>
+              </form>
+
+
+
+{% endblock %}
