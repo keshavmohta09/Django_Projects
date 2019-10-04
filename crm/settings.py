@@ -36,7 +36,7 @@ environ.Env.read_env()
 
 DEBUG = True
 SECRET_KEY = env('SECRET_KEY')
-# SECRET_KEY = 'y26m#jj*!g+n11n_kpd7mwwc7a=#%3_q-u8fe+48t)1-%vl9!4'
+
 
 
 
