@@ -34,11 +34,8 @@ environ.Env.read_env()
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 
-DEBUG = True
+DEBUG = False
 SECRET_KEY = env('SECRET_KEY')
-
-
-
 
 DATABASES = {
   'default': env.db(),
