@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/hd783u3f/', admin.site.urls),
     path('' , include('crm_pro.urls')),
     path('register/',include('register.urls')),
     path('social/', include('social_django.urls', namespace='social')),
