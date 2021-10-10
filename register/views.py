@@ -4,13 +4,9 @@ from django.contrib.auth.models import User , auth
 
 
 def index_google(request):
-
-
     return render(request, 'index_google.html')
     auth.index_google(request)
     return redirect('/')
-
-
 
 def login_fb(request):
     return render(request, 'login_fb.html')
@@ -25,8 +21,6 @@ def logout(request):
 
 def login(request):
     return render(request, 'login.html')
-
-
 
 def register1(request):
     if request.method =='POST':
@@ -53,15 +47,11 @@ def register1(request):
                                                 last_name=last_name)
                 user.save();
                 return render(request,'login.html')
-
-
-
-
-
-
-
+            
     else :
         return render(request, 'register.html')
+    
+    
 def login1(request):
     if request.method == 'POST':
         username = request.POST['username']
