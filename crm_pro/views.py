@@ -59,11 +59,12 @@ def add_service(request):
 def view_service(request):
     dests = AddService.objects.all()
     return render(request , 'view_services.html' , {'dests':dests})
+
 def add_invoice(request):
-    dests = AddProduct.objects.all()
-    dest1 = AddService.objects.all()
+    dests, dest1 = AddProduct.objects.all(), AddService.objects.all()
     context = {'dests':dests , 'dest1':dest1}
     return render(request , 'add_invoices.html',context)
+   
 def view_invoice(request):
     dests = AddInvoices.objects.all()
     return render(request , 'view_invoices.html', {'dests':dests})
@@ -77,15 +78,13 @@ def add_vendor(request):
     if form.is_valid():
         form.save()
         return render(request,'index.html')
-
-
-
     return render(request, "add_vendors.html", {'form': form})
 
 
 def view_vendor(request):
     dests = AddVendors.objects.all()
     return render(request ,'view_vendors.html', {'dests':dests})
+
 def add_purOrder(request):
     form = add_purchaseorders(request.POST or None)
     if form.is_valid():
